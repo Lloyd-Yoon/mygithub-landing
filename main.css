@@ -1,0 +1,285 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+header {
+    /* background-color: #040d22; */
+    position: relative;
+
+}
+
+/* 아래 항목은 부트스트랩에서 제공하는 틀래스에서 대체 
+<div class="container d-flex align-items-center py-3"> */
+/* header .container {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+} */
+
+/* input 배경색 조정  */
+header .forms input.form-control {
+    color: white;
+    /* rgba(red, green, blue, alpha) : alpha는 투명도 의미  0 완전 투명, 1 불투명*/
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+
+}
+
+/* 힌트(::placeholder) 색상 조정  */
+header .forms input.form-control::placeholder {
+     /* 255, 255, 255 는 흰색  */
+    color: rgba(255, 255, 255, 0.6)
+}
+
+/* 반응형 햄버거 메뉴 안보이게 처리  */
+header [data-bs-toggle="offcanvas"] {
+    display: none;
+}
+
+header .offcanvas .list-group-item {
+    padding: 16px;
+}
+header .offcanvas .list-group-item a {
+    color: black;
+    /* 밑줄 제거  */
+    text-decoration: none;
+}
+
+header .offcanvas .list-group-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* lg 화면크기에 해당하는 브레이크 포인트 992px 보다 작으면 표시  */
+@media (max-width: 992px) {
+    /* 햄버거 메뉴 우축 정렬  */
+    header .logo {
+        flex-grow: 1;
+    }
+    /* 기본 메뉴 화면에서 사라지게 처리, 여러개 항목인 다중선택자 처리시에는 "," 로 분리  */
+    header .nav, 
+    header .forms input.form-control,
+    header .forms .btn-link {
+        display: none;
+    }
+
+    header [data-bs-toggle="offcanvas"] {
+        display: block;
+    }
+}
+
+
+/* 컨테이너 배경색지정 : 위아래 여백 넣기 : 글자 데코레이션 */
+section.hero {
+    background-color: #040d22;
+    position: relative;
+    /* 자기 밖으로 넘치는 영역은 잘라낸다  */
+    overflow: hidden;
+}
+section.hero .container {
+    padding-top: 160px;
+    padding-bottom: 160px;
+    position: relative;
+}
+section.hero .headline h1 {
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+section.hero .headline p {
+    font-size: 26px;
+}
+section.hero img.globe {
+    width: 900px;
+    position: absolute;
+    top: -5%;
+    left: 46%;
+}
+section.hero img.glow {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.hero .curve {
+    width: 100%;
+    transform: scaleY(.2);
+    transform-origin: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+/* section.hero .curve {
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+} */
+
+section.youtube {
+
+
+}
+section.youtube .container {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+section.youtube img.astronaut {
+    width: 400px;
+    position: absolute;
+    top: -380px;
+    right: 0;
+}
+
+section.youtube .ratio {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* 화면이 768(col-md) 보다 작으면 우주비행사 사진 안보이게 처리  */
+ @media (max-width: 768px) {
+    section.youtube img.astronaut {
+        display: none;
+    }
+ }
+
+
+section.features {
+
+}
+section.features .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+
+section.features .card {
+    color: #627597;
+    border: none;
+}
+
+section.features .card img {
+    /* padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px; */
+    padding: 30px 60px
+}
+@media (max-width: 576px) {
+    section.features .card img {
+        padding: 20px 30px
+    }
+}
+
+section.map {
+
+}
+section.map .container{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #627597;
+}
+
+section.map h1{
+    font-size: 44px;
+    font-weight: 700;
+}
+
+section.map h1{
+    font-size: 24px;
+}
+
+/* id 객체는 유일해서 이렇게 써도 됨  section.map #map*/
+#map {
+    height: 500px;
+    /* 검은색 rgba(0,0,0,0,2) 20% 불투명도로 해석*/
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    /* 다른 요소보더 더 위에 쌓는다 다른요소가 지도위를 가리는것을 방지하기 위함 */
+    z-index: 1;
+}
+
+footer {
+    background-color: #040d22;
+    position: relative;
+    margin-top: 20%;
+}
+footer .curve {
+    width: 100%;
+    transform: scaleY(-.5) translateY(50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+footer .container {
+
+}
+footer img.illustration {
+    width: 100%;
+    margin-top: -25%;
+    margin-bottom: 50px;
+    /* 이미지 좌우 반전 -1 */
+    transform: scale(-1, 1);
+
+}
+footer h5 {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: white;
+}
+
+footer .site-links {
+    /* margin을 초기화 하고 다시 설정  */
+    margin: 0;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: center;
+    /* 기본값  nowrap */
+    flex-wrap: wrap;
+}
+
+footer .site-links li {
+    
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+    margin-right: 20px;
+}
+footer .site-links li:last-child {
+    margin-right: 0; 
+}
+
+@media (max-width: 992px) {
+    footer {
+        text-align: center;
+    }
+    footer img.logo {
+        margin-bottom: 30px;
+    }
+
+}
+
+
